@@ -5,9 +5,13 @@ def fib_recursive(n: int) -> int:
     :param n: number of item
     :return: Fibonacci number
     """
-    print(n)
-    return 0
 
+    a, b = 0, 1
+    for num in range(n):
+        yield a
+        a, b = b, a + b
+
+    return list(fib_recursive(n))[-1] + list(fib_recursive(n))[-2]
 
 def fib_iterative(n: int) -> int:
     """
@@ -16,5 +20,8 @@ def fib_iterative(n: int) -> int:
     :param n: number of item
     :return: Fibonacci number
     """
-    print(n)
-    return 0
+
+    if n <= 1:
+        return n
+
+    return fib_iterative(n - 1) + fib_iterative(n - 2)
