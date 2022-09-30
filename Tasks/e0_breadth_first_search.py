@@ -16,7 +16,7 @@ def draw_graph(graph):
             edgelist=[(edge[0], edge[1])], connectionstyle="arc3,rad=0.2"
         )
 
-    plt.show()  # plt.savefig()
+    plt.show()
 
 
 def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
